@@ -12,3 +12,7 @@ class TestCity(unittest.TestCase):
     
     def test_city_visted_is_false(self):
         self.assertEqual(False, self.city1.visited)
+    
+    def test_city_has_id(self):
+        self.assertEqual(id, self.city1.id)
+    
