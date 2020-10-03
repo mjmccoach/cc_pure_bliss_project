@@ -10,6 +10,7 @@ def save(country):
 
     return country
 
+
 def select_all():
     countries_list = []
 
@@ -20,6 +21,7 @@ def select_all():
         country = Country(["name"], ["continent"], [id])
         countries_list.append(country)
     return countries_list
+
 
 def select(id):
     country = None
@@ -32,14 +34,23 @@ def select(id):
         country = Country(result['name'], result['continent'], result['id'])
     return country
 
+
 def delete_all():
 
     sql = "DELETE FROM countries"
     results = run_sql(sql)
+
 
 def delete(id):
 
     sql = "DELETE FROM countries WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)
+
+
+def update(country):
+    
+    sql = "UPDATE countries SET(name, continent) = (%s,%s) WHERE id = %s"
+    values = [country.name, country.continent, country.id]
+    run_sql(sql, values)
     
