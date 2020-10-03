@@ -9,3 +9,14 @@ def save(country):
     country.id = results[0]['id']
 
     return country
+
+def select_all():
+    countries_list = []
+
+    sql = "SELECT * FROM countries"
+    results = run_sql(sql)
+    
+    for row in results:
+        country = Country(["name"], ["continent"], [id])
+        countries_list.append(country)
+    return countries_list
