@@ -18,8 +18,9 @@ country_repository.save(country2)
 country3 = Country("New Zealand", "Oceania")
 country_repository.save(country3)
 
+country_repository.delete(1)
 # country_repository.select_all()
-country_repository.select(1)
+# country_repository.select(1)
 
 city1 = City("Busan")
 city_repository.save(city1)
