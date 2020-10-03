@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request
 from flask import Blueprint
 from models.country import Country
 
@@ -11,3 +11,9 @@ def countries():
     countries = country_repository.select_all()
     return render_template("countries/index.html", countries = countries)
 
+# @countries_blueprint.route("/countries/new")
+# def create_country():
+#     country_name = request.form["country.name"]
+#     country_contintent = request.form["country.continent"]
+#     country_repository.save(country)
+#     return redirect ("/countries")

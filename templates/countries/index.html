@@ -1,15 +1,16 @@
 
 
 <h1>Countries</h1>
+<a href="/">Home</a>
 {% block content%}
 
-<table></table>
-<h2>Name</h2>
-<section>
+<table>
+<tr><th>Name</th> 
+</tr>
+
     {% for country in countries %}
-        {{country.name}}
+       <tr> <td>{country.name}} {{country.continent}} </td></tr>
     {% endfor %}
 
-</section>
-
+</table>
 {% endblock %}
