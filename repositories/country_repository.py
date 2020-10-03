@@ -31,3 +31,8 @@ def select(id):
     if result is not None:
         country = Country(result['name'], result['continent'], result['id'])
     return country
+
+def delete_all():
+
+    sql = "DELETE FROM countries"
+    results = run_sql(sql)

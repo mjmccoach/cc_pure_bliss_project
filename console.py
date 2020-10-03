@@ -6,6 +6,7 @@ from models.country import Country
 import repositories.country_repository as country_repository
 import repositories.city_repository as city_repository
 
+country_repository.delete_all()
 
 country1 = Country("Germany", "Europe")
 country_repository.save(country1)
