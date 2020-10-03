@@ -20,3 +20,14 @@ def select_all():
         country = Country(["name"], ["continent"], [id])
         countries_list.append(country)
     return countries_list
+
+def select(id):
+    country = None
+    
+    sql = "SELECT * FROM countries WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        country = Country(result['name'], result['continent'], result['id'])
+    return country

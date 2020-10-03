@@ -8,4 +8,17 @@ def save(city):
     results = run_sql(sql, values)
     city.id = results[0]['id']
 
-    return city 
+    return city
+
+# def select_all():
+#     city_list = []
+    
+#     sql = "SELECT * FROM cities"
+#     results = run_sql(sql)
+
+#     for row in results:
+#         country = Country(row["id"])
+#         city = City(row["name"], row [id], row [visited], country)
+#         city_list.append(city)
+#     return city
+

@@ -16,7 +16,8 @@ country_repository.save(country2)
 country3 = Country("New Zealand", "Oceania")
 country_repository.save(country3)
 
-country_repository.select_all()
+# country_repository.select_all()
+country_repository.select(1)
 
 city1 = City("Busan")
 city_repository.save(city1)
@@ -26,5 +27,7 @@ city_repository.save(city2)
 
 city3 = City("Christchurch")
 city_repository.save(city3)
+
+# city_repository.select_all()
 
 pdb.set_trace()
