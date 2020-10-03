@@ -32,7 +32,7 @@ city_repository.save(city2)
 city3 = City("Christchurch")
 city_repository.save(city3)
 
-# city_repository.update(city1)
+city_repository.update(city1)
 
 # city_repository.delete(0)
 # city_repository.select_all()

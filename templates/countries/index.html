@@ -9,8 +9,10 @@
 </tr>
 
     {% for country in countries %}
-       <tr> <td>{country.name}} {{country.continent}} </td></tr>
+       <tr> <td> {{country.name}} {{country.continent}} </td></tr>
     {% endfor %}
 
 </table>
 {% endblock %}
+
+<a href="countries/new.html">Add new country</a>
