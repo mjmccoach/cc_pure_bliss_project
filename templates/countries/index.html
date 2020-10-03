@@ -1,14 +1,15 @@
-{% extends 'base.html' %}
+
 
 <h1>Countries</h1>
-{% block  %}
-    
+{% block content%}
 
+<table></table>
+<h2>Name</h2>
 <section>
-    {% for country in countries  %}
-        {{ country.name }}
+    {% for country in countries %}
+        {{country.name}}
     {% endfor %}
 
 </section>
 
-{% endblock  %}
+{% endblock %}
