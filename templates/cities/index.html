@@ -1,0 +1,16 @@
+<h1>
+    Cities
+</h1>
+<a href="/index.html">Home</a>
+
+<table>
+    <th>Names</th>
+    {% for city in cities  %}
+    <tr>
+        <td>
+            {{city.name}}
+        </td>
+    </tr>
+    {% endfor %}
+    
+</table>
