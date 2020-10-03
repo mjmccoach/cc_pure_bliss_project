@@ -22,3 +22,7 @@ def save(city):
 #         city_list.append(city)
 #     return city
 
+def delete_all():
+    
+    sql = "DELETE FROM cities"
+    results = run_sql(sql)
