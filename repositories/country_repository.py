@@ -56,7 +56,6 @@ def update(country):
     run_sql(sql, values)
 
 def cities(country):
-    
     city_list = []
 
     sql = "SELECT * FROM cities WHERE country_id = %s"
