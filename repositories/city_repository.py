@@ -21,8 +21,8 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        # country = country_repository.select(row["id"])
-        city = City(["name"], [id], ['visited'])
+        country = country_repository.select(row["id"])
+        city = City(["name"], country , ['visited'], [id])
         city_list.append(city)
     return city_list
 
@@ -40,6 +40,7 @@ def delete(id):
 
 def update(city):
     
-    sql = "UPDATE cities SET (name) = (%s) WHERE id = %s"
-    values = [city.name, city.id]
+    sql = "UPDATE cities SET (name, country, visited) = (%s, %s, %s) WHERE id = %s"
+    values = [city.name, city.country, city.visited]
+    print(values)
     result = run_sql(sql, values)
