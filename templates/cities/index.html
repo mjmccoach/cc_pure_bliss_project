@@ -8,7 +8,9 @@
     <th>Names</th>
     {% for city in cities  %}
     <tr>
-        <td>
+        <td><form class="delete-form" action = "/cities/{{city.id}}/delete" method="POST">
+            <button class = delete-button></button>
+        </form>
             {{city.name}} in {{city.country.name}}
         </td>
     </tr>
