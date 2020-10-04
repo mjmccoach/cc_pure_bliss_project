@@ -12,14 +12,19 @@ def cities():
     cities = city_repository.select_all()
     return render_template("cities/index.html", cities = cities)
 
+@cities_blueprint.route("/cities/new", methods=["GET"])
+def new_city():
+    countries = country_repository.select_all()
+    return render_template("/cities/new.html", all_countries = countries)
+
 @cities_blueprint.route("/cities", methods=["POST"])
 def add_city():
     name = request.form['name']
-    country = request.form["country_id"]
+    country_id = request.form["country_id"]
     visited = request.form["visited"]
 
     country = country_repository.select(country_id)
-    city = City("name","country","visited","id")
+    city = City(name, country, visited)
     
     city_repository.save(city)
     
