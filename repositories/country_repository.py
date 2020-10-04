@@ -54,4 +54,16 @@ def update(country):
     sql = "UPDATE countries SET(name, continent) = (%s,%s) WHERE id = %s"
     values = [country.name, country.continent, country.id]
     run_sql(sql, values)
+
+def cities(country):
     
+    city_list = []
+
+    sql = "SELECT * FROM cities WHERE country_id = %s"
+    values = [country.id]
+    results = (run_sql, values)
+
+    for row in results:
+        city = City(row["name"], row["country"], row["visited"], row["id"])
+        city_list.append(city)
+    return city_list
