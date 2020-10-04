@@ -5,14 +5,14 @@
 {% block content%}
 
 <table>
-<tr><th>Name</th> 
+<h2>Countries</h2>
 </tr>
 
-    {% for country in countries %}
+    {% for country in all_countries %}
        <tr> <td> {{country.name}} {{country.continent}} </td></tr>
     {% endfor %}
 
 </table>
 {% endblock %}
 
-<a href="countries/new.html">Add new country</a>
+<a href="countries/new">Add new country</a>
