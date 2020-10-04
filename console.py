@@ -23,16 +23,16 @@ country_repository.save(country3)
 # country_repository.select(1)
 
 # country_repository.update(country1)
-city1 = City("Busan")
+city1 = City("Busan", country2)
 city_repository.save(city1)
 
-city2 = City("Cologne")
+city2 = City("Cologne", country1)
 city_repository.save(city2)
 
-city3 = City("Christchurch")
+city3 = City("Christchurch", country3)
 city_repository.save(city3)
 
-city_repository.update(city1)
+# city_repository.update(city1)
 
 # city_repository.delete(0)
 # city_repository.select_all()

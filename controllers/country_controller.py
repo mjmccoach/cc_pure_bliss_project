@@ -11,9 +11,12 @@ def countries():
     countries = country_repository.select_all()
     return render_template("countries/index.html", countries = countries)
 
-@countries_blueprint.route("/countries/new")
+@countries_blueprint.route("/countries/new", methods=["POST"])
 def add_country():
+    
     country_name = request.form["name"]
     country_continent = request.form["continent"]
+    country = Country(name, continent)
+
     country_repository.save(country)
     return redirect ("/countries")

@@ -6,12 +6,13 @@ from models.country import Country
 import repositories.country_repository as country_repository
 
 def save(city):
-    sql = "INSERT into cities(name) VALUES (%s) RETURNING id"
-    values = [city.name]
+    sql = "INSERT into cities(name, country_id, visited) VALUES (%s, %s, %s) RETURNING *"
+    values = [city.name, city.country.id, city.visited]
     results = run_sql(sql, values)
-    city.id = results[0]['id']
+    id = results[0]['id']
+    city.id = id
 
-    return city
+    return city 
 
 def select_all():
     city_list = []
