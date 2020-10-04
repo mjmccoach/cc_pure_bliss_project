@@ -23,7 +23,7 @@ def select_all():
 
     for row in results:
         country = country_repository.select(row["id"])
-        city = City(["name"], country , ['visited'], [id])
+        city = City(row["name"], country , row['visited'], row['id'])
         city_list.append(city)
     return city_list
 

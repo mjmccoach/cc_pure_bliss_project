@@ -2,7 +2,8 @@
     Cities
 </h1>
 <a href="/">Home</a>
-
+{% block content %}
+    
 <table>
     <th>Names</th>
     {% for city in cities  %}
@@ -16,3 +17,5 @@
 </table>
 
 <a href="/cities/new">Add New City</a>
+
+{% endblock %}
