@@ -16,6 +16,7 @@ def save(item):
 
 def delete(id):
     sql = "DELETE FROM bucketlist WHERE id = %s"
-    
+    values = [id]
+    run_sql(sql, values)
    
 
