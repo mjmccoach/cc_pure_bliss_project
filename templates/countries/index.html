@@ -9,7 +9,7 @@
 </tr>
 
     {% for country in all_countries %}
-       <tr> <td> <a href="/countries/<id>">{{country.name}}</a>,{{country.continent}} </td></tr>
+       <tr> <td> <a href="/countries/{{country.id}}">{{country.name}}</a>,{{country.continent}} </td></tr>
     {% endfor %}
 
 </table>

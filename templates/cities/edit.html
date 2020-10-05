@@ -1,16 +1,16 @@
 {% block content %}
 
-<form action="cities/{{city.id}}" method ="post">
+<form action="/cities/{{city.id}}" method ="POST">
     <label for="name">Name :</label>
     <input type="text" id ="name" name="name" value="{{city.name}}" required autofocus>
 
     <label for="visited">Visited:</label>
     <select name="visited" id="visited">
-        <option value="false" 
+        <option value="False" 
         {% if city.visited == False %} selected="selected" {% endif %}>
             No
         </option>
-        <option value="true"
+        <option value="True"
         {% if city.visited == True %} selected="selected" {% endif %}>
         Yes
     </option>

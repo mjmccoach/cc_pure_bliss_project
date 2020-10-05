@@ -29,7 +29,7 @@ def select(id):
     
     sql = "SELECT * FROM countries WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)[0]   
+    result = run_sql(sql, values)[0]
 
     if result is not None:
         country = Country(result['name'], result['continent'], result['id'])
@@ -53,6 +53,7 @@ def update(country):
     
     sql = "UPDATE countries SET(name, continent) = (%s,%s) WHERE id = %s"
     values = [country.name, country.continent, country.id]
+    print(values)
     run_sql(sql, values)
 
 def cities(country):
