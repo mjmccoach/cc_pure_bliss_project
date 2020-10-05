@@ -1,1 +1,12 @@
 <h1>My Bucket List</h1>
+<a href="/">Home</a>
+<a href="bucketlist/new">Add Destination</a>
+<br>
+
+{% for country in countries %}
+    {{country.name}}
+    <form action="/bucketlist/new">
+    <button type="menu">Add</button>
+    </form>
+    
+{% endfor %}

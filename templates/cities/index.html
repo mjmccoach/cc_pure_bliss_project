@@ -12,7 +12,8 @@
             <button class = delete-button></button>
         </form>
             <a href="/cities/{{city.id}}"> {{city.name}} </a> in <br>{{city.country.name}} <br>Visited? {% if city.visited == True %}
-                Yes <br> <textarea name="city_review" id="city_review" cols="30" rows="10"></textarea>
+                Yes 
+                    <!-- <br> <textarea name="city_review" id="city_review" cols="30" rows="10"></textarea> -->
               {% else %}
                 No
               {% endif %}

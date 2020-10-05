@@ -24,3 +24,17 @@ def update(item):
     values = [bucketlist.city.id, bucketlist.country.id, bucketlist.visited, bucketlist.id]
     run_sql(sql, values)
 
+def select_all():
+    bucketlist_items = []
+
+    sql = "SELECT * FROM bucketlist"
+    results = run_sql(sql)
+
+    for row in results:
+        country = country_repository.select(row['country_id'])
+        city = city_repository.select(row['city_id'])
+        bucketlist = Bucketlist(row['city_id'], row['country_id'], row['visited'], row['id'])
+
+        bucketlist_items.append(bucketlist)
+    return bucketlist_items
+

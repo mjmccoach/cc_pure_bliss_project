@@ -1,0 +1,21 @@
+{% block content %}
+    
+
+<h1> My Bucket List </h1>
+<form action="/bucketlist" methods="POST">
+    <label for="city">City</label>
+        <select name="city" id="city">
+        {% for city in cities %}
+        <option value="{{city.name}}"
+            {% if city.country.id == city.id  %} {% endif %}>
+            {{city.name}}
+        </option>
+        {% endfor %}
+        </select>
+    
+    <button type="submit">Add Destination</button>
+</form>
+
+
+    
+{% endblock %}
