@@ -26,3 +26,9 @@ def add_country():
 
     country_repository.save(country)
     return redirect ("/countries")
+
+@countries_blueprint.route("/countries/<id>/edit", methods = ["GET"])
+def edit_city(id):
+    country = country_repository.select(id)
+    
+    return render_template("/countries/edit.html", country = country)

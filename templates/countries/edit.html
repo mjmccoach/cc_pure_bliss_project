@@ -1,0 +1,19 @@
+{% blockcontent  %}
+
+<form action="countries/{{country.id}}" method ="post">
+    <label for="name">Name :</label>
+    <input type="text" id ="name" name="name" value="{{country.name}}" required autofocus>
+
+    <label for="continent">Continent:</label>
+    <input type="text" id="continent" name="continent" value={{country.continent}} required">
+
+    
+    </select>
+    
+   
+    <button type="submit">Update Country</button>
+</form>
+
+
+
+{% endblock %}

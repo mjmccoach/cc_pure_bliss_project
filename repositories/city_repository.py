@@ -27,6 +27,18 @@ def select_all():
         city_list.append(city)
     return city_list
 
+def select(id):
+    city = None
+
+    sql = "SELECT * FROM cities WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        country = country_repository.select(result['country_id'])
+        city = City(result["name"], country, result["visited"], result[id])
+    return city
+
 def delete_all():
     
     sql = "DELETE FROM cities"

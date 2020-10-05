@@ -11,7 +11,8 @@
         <td><form class="delete-form" action = "/cities/{{city.id}}/delete" method="POST">
             <button class = delete-button></button>
         </form>
-            <a href="cities/{{city.id}}">{{city.name}}</a> in {{city.country.name}}
+            <href href="/cities/{{city.id}}">{{city.name}}</href> in <br>
+            {{city.country.name}}
         </td>
     </tr>
     {% endfor %}
