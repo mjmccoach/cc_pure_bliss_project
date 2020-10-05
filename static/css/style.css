@@ -1,3 +1,32 @@
-body > header {
-    background-colour: black;
+body {
+    background: url('/static/images/tortola.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
+body > header {
+    display: grid;
+    align-items: flex-start;
+    background-color: black;
+    color: white;
+}
+
+body > header > ul > li > a {
+    color: white;
+    style:   
+}
+    footer {
+        display: grid;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        background-color: black;
+        list-style-type: none;
+        
+    }
+        ul {
+            list-style-type: none;
+        }
+            ul > li > a {
+                color: white;
+            
+            }
