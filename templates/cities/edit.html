@@ -11,18 +11,18 @@
             No
         </option>
         <option value="true"
-        {if city.visited == True %} selected="selected" {% end if %}>
+        {% if city.visited == True %} selected="selected" {% endif %}>
         Yes
     </option>
     </select>
     
     <label for="country">Country</label>
     <select name="country_id" id="country">
-        {% for country in countries }
+        {% for country in countries %}
          <option value=" {{country.id}}">
          {{country.name}}
         </option>
-        {% endfor}
+        {% endfor %}
     </select>
     <button type="submit">Update City</button>
 </form>

@@ -6,7 +6,7 @@
     <input type="text" id ="name" placeholder="Name" required>
     
     <label for="country">Country:</label>
-        <select name="country" id="country_id">
+        <select name="country" id="country">
             {% for country in all_countries %}
                 <option value="{{ country.id }}">{{ country.name }}</option>
             {% endfor %}    

@@ -29,7 +29,7 @@ def select(id):
     
     sql = "SELECT * FROM countries WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)[0]
+    result = run_sql(sql, values)[0]   
 
     if result is not None:
         country = Country(result['name'], result['continent'], result['id'])

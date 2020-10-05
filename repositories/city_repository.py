@@ -22,7 +22,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        country = country_repository.select(row["id"])
+        country = country_repository.select(row["country_id"])
         city = City(row["name"], country , row['visited'], row['id'])
         city_list.append(city)
     return city_list
@@ -32,11 +32,12 @@ def select(id):
 
     sql = "SELECT * FROM cities WHERE id = %s"
     values = [id]
+    # import pdb; pdb.set_trace()
     result = run_sql(sql, values)[0]
 
     if result is not None:
         country = country_repository.select(result['country_id'])
-        city = City(result["name"], country, result["visited"], result[id])
+        city = City(result["name"], country, result["visited"], result['id'])
     return city
 
 def delete_all():
