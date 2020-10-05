@@ -8,10 +8,11 @@
     <label for="city">City</label>
         <select name="city" id="city">
         {% for city in cities %}
-        <option value="{{city.name}}"
-            {% if city.country.id == city.id  %} {% endif %}>
+        {% if country.id == city.country.id  %} 
+        <option value="{{city.id}}">
             {{city.name}}
         </option>
+        {% endif %}
         {% endfor %}
         </select>
     

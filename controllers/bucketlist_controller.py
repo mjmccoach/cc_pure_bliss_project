@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request
 from flask import Blueprint
+
 from models.city import City
 from models.country import Country
 from models.bucketlist import Bucketlist
@@ -23,8 +24,12 @@ def new_item():
 
     return render_template("/bucketlist/new.html", countries = countries, cities = cities)
 
-@bucketlist_blueprint.route("/bucketlist", methods = ["POST"])
-def add_item():
-    name = request.form["city"]
+@bucketlist_blueprint.route("/bucketlist/new/<country_id>", methods = ["POST"])
+def add_item(country_id):
+    country = country_repository.select(country_id)
+    city = city_repository.select_all()
+    bucketlist = bucketlist_repository.select_all()
+
+    return render_template("bucketlist/index.html", country = country, city= cities, bucketlist = bucketlist)
 
     
