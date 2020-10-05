@@ -1,7 +1,9 @@
+{% extends 'base.html' %}
 {% block content %}
     
 
 <h1> My Bucket List </h1>
+<a href="/">Home</a>
 <form action="/bucketlist" methods="POST">
     <label for="city">City</label>
         <select name="city" id="city">

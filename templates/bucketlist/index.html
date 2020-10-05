@@ -1,6 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+
 <h1>My Bucket List</h1>
 <a href="/">Home</a>
 <a href="bucketlist/new">Add Destination</a>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 <br>
 
 {% for country in countries %}
@@ -10,3 +15,4 @@
     </form>
     
 {% endfor %}
+{% endblock  %}
