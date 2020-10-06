@@ -18,8 +18,12 @@
 {% for bucket in bucketlist %}
     <form class="city-form" action="/bucketlist/delete/{{bucketlist.id}}">
     </form>
-    <a href="/bucketlist/{{bucketlist.id}}"> {{bucketlist.city}}  {{bucketlist.country}}
-    </a>
+    {{bucket.city.name}}  {{bucket.country.name}} {% if bucket.visited == True %}
+    &#9989
+    {% else %}
+    &#10060
+    {% endif %}
+   
     
 {% endfor %}
 <hr>
