@@ -7,13 +7,16 @@
 <a class= "city-form" href="bucketlist/new">Add Destination</a>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 <br>
-<div id=container>
 {% for country in countries %}
     {{country.name}}
-    <form class="city-form" action="/bucketlist/new/{{country.id}}">
-    <button type="menu">Add</button>
+    <form action="/bucketlist/new/{{country.id}}">
+    <button class="submit-button" type="submit">Add</button>
     </form>
 {% endfor %}
-</div>
+
+{% for bucket in bucketlist %}
+    {{bucketlist.city.name}}
+    {{bucketlist.country.name}}
+{% endfor %}
 <hr>
-{% endblock  %}
+{% endblock %}

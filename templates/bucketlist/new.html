@@ -4,7 +4,7 @@
 
 <h1> My Bucket List </h1>
 <a class="home-button" href="/">Home</a>
-<form action="/bucketlist" methods="POST">
+<form class="city-form" action="/bucketlist" method="POST">
     <label for="city">City</label>
         <select name="city" id="city">
         {% for city in cities %}
@@ -16,7 +16,7 @@
         {% endfor %}
         </select>
     
-    <button type="submit">Add Destination</button>
+    <button class="submit-button" type="submit">Add Destination</button>
 </form>
 
 

@@ -1,6 +1,6 @@
 body {
+    font-family: 'Roboto Condensed', sans-serif;
     display:grid;
-    background: url(https://twitter.com/hharrisonboothh/header_photo);
     /* background-size: cover;
     background-repeat: no-repeat; */
     background-color: #9ecef0;
@@ -10,7 +10,7 @@ body {
 body > section {
     display: flex;
     justify-content: center;
-    
+    vertical-align: center;
 }
 
 body > a {
@@ -122,8 +122,11 @@ body > p {
     justify-self: center;
     padding: 18px;
     width: 70px;
+    height: 20px;
     background-color: #124f7a;
     color : whitesmoke;
+    text-align: right;
+    text-decoration: none;
 }
 
 .city-button:hover {
@@ -131,6 +134,7 @@ body > p {
 }
 
 .delete-button {
+    display: flex;
     cursor: pointer;
     width:52px;
     height: 24px;
@@ -139,7 +143,9 @@ body > p {
     border: 0;
     background-color:#124f7a;
     color: whitesmoke;
-    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+
 }
 
 .delete-button:hover {
@@ -155,13 +161,11 @@ body > p {
     color:  #f0cb9e;
 }
 
+
 .home-button:hover{
     color: #f0cb9e;
 }
 
-#container {
-    justify-content: center;
-}
 
 .country-link {
     color: #345ac2;
@@ -175,4 +179,15 @@ body > p {
 body > table > {
     display: flex;
     justify-content: center;
+}
+
+.submit-button {
+    background-color:#124f7a;
+    color: whitesmoke;
+    text-decoration: none;
+    cursor: pointer;   
+}
+
+.submit-button:hover {
+    color:#f0cb9e;
 }
