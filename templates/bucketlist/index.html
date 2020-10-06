@@ -3,16 +3,17 @@
     
 
 <h1>My Bucket List</h1>
-<a href="/">Home</a>
-<a href="bucketlist/new">Add Destination</a>
+<a class="home-button" href="/">Home</a>
+<a class= "city-form" href="bucketlist/new">Add Destination</a>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 <br>
-
+<div id=container>
 {% for country in countries %}
     {{country.name}}
-    <form action="/bucketlist/new">
+    <form class="city-form" action="/bucketlist/new/{{country.id}}">
     <button type="menu">Add</button>
     </form>
 {% endfor %}
+</div>
 <hr>
 {% endblock  %}

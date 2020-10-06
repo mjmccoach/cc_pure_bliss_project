@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Countries</h1>
-<a href="/">Home</a>
+<a class="home-button" href="/">Home</a>
 
 
-<table>
+<table class=countries-table>
 <h2>Countries</h2>
 </tr>
 
     {% for country in all_countries %}
-       <tr> <td> <a href="/countries/{{country.id}}">{{country.name}}</a>,{{country.continent}} </td></tr>
+       <tr> <td> <a class="country-link" href="/countries/{{country.id}}">{{country.name}}</a>,{{country.continent}} </td></tr>
     {% endfor %}
 
 </table>
+<a href="countries/new">Add new country</a>
 {% endblock %}
 
-<a href="countries/new">Add new country</a>

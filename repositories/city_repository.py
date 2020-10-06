@@ -32,7 +32,6 @@ def select(id):
 
     sql = "SELECT * FROM cities WHERE id = %s"
     values = [id]
-    # import pdb; pdb.set_trace()
     result = run_sql(sql, values)[0]
 
     if result is not None:

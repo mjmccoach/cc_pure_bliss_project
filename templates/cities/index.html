@@ -3,17 +3,17 @@
 <h1>
     Cities
 </h1>
-<a href="/">Home</a>
+<a class="home-button" href="/">Home</a>
 
     
-<table>
+<table class="city-display-table">
     <th>Names</th>
     {% for city in cities  %}
     <tr>
         <td><form class="delete-form" action = "/cities/{{city.id}}/delete" method="POST">
-            <button class = delete-button></button>
+            <button class = delete-button>Delete</button>
         </form>
-            <a href="/cities/{{city.id}}"> {{city.name}} </a> in <br>{{city.country.name}} <br>Visited? {% if city.visited == True %}
+            <a class="city-link" href="/cities/{{city.id}}"> {{city.name}} </a> in {{city.country.name}}. Have I visited? {% if city.visited == True %}
                 Yes 
                     <!-- <br> <textarea name="city_review" id="city_review" cols="30" rows="10"></textarea> -->
               {% else %}
@@ -25,6 +25,6 @@
     
 </table>
 
-<a href="/cities/new">Add New City</a>
+<button class="city-button" href="/cities/new">Add New City</button>
 
 {% endblock %}

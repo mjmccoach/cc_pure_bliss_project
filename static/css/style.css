@@ -1,9 +1,35 @@
 body {
-    background: url('/static/images/tortola.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    display:grid;
+    background: url(https://twitter.com/hharrisonboothh/header_photo);
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+    background-color: #9ecef0;
+    color: whitesmoke;
+    text-decoration: none;
+}
+body > section {
+    display: flex;
+    justify-content: center;
+    
 }
 
+body > a {
+    display:flex;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+body > h1 {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+body > h2 {
+    display: flex;
+    justify-content: center;
+
+}
 body > header {
     display: grid;
     flex-wrap: nowrap;
@@ -11,6 +37,7 @@ body > header {
     justify-content: center;
     background-color: cornflowerblue;
     color: white;
+    text-decoration: none;
 }
 
 body > h1 {
@@ -22,6 +49,7 @@ body > header > ul > li {
 
 body > header > ul > li > a {
     color: white;
+    text-decoration: none;
 }
     footer {
         display: grid;
@@ -40,5 +68,111 @@ body > header > ul > li > a {
         }
             ul > li > a {
                 color: white;
+                text-decoration: none;
             
             }
+
+.city-display-table {
+    display: grid;
+    justify-content: center;
+}
+
+.country-button{
+
+    display:grid;
+    justify-content: center;
+    padding: 24px;
+}
+
+.country-button:hover{
+    color: #f0cb9e;
+}
+
+.header-link:hover{
+    color:#9ef0b0;
+}
+
+.footer-link:hover{
+    color:#9ef0b0;
+}
+
+.index-background-image {
+    width: 250px;
+}
+
+.countries-table {
+    display:flex;
+    justify-content: center;
+
+}
+
+body > p {
+    display: flex;
+    justify-content: center;
+}
+
+.city-form {
+    display:flex;
+    justify-content: center;
+}
+
+.city-button {
+    display:flex;
+    align-items:center;
+    justify-self: center;
+    padding: 18px;
+    width: 70px;
+    background-color: #124f7a;
+    color : whitesmoke;
+}
+
+.city-button:hover {
+    color: #f0cb9e;
+}
+
+.delete-button {
+    cursor: pointer;
+    width:52px;
+    height: 24px;
+    padding: 10px;
+    margin: 16px;
+    border: 0;
+    background-color:#124f7a;
+    color: whitesmoke;
+    align-items: center;
+}
+
+.delete-button:hover {
+    background-color: peachpuff;
+}
+
+.city-link {
+    color: #345ac2;
+    text-decoration: none;
+}
+
+.city-link:hover{
+    color:  #f0cb9e;
+}
+
+.home-button:hover{
+    color: #f0cb9e;
+}
+
+#container {
+    justify-content: center;
+}
+
+.country-link {
+    color: #345ac2;
+    text-decoration: none;
+}
+
+.country-link:hover{
+    color:  #f0cb9e;
+}
+
+body > table > {
+    display: flex;
+    justify-content: center;
+}

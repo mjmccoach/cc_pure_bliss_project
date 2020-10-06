@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<a href="/">Home</a>
-<form action="/cities/{{city.id}}" method ="POST">
+<a class="home-button" href="/">Home</a>
+<form class="city-form" action="/cities/{{city.id}}" method ="POST">
     <label for="name">Name :</label>
     <input type="text" id ="name" name="name" value="{{city.name}}" required autofocus>
-
+    
     <label for="visited">Visited:</label>
     <select name="visited" id="visited">
         <option value="False" 
@@ -16,7 +16,7 @@
         Yes
     </option>
     </select>
-    
+    <br>
     <label for="country">Country</label>
     <select name="country_id" id="country">
         {% for country in countries %}
@@ -25,6 +25,7 @@
         </option>
         {% endfor %}
     </select>
+    <br>
     <button type="submit">Update City</button>
 </form>
 
