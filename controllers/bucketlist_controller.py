@@ -15,6 +15,7 @@ bucketlist_blueprint = Blueprint("bucketlist",__name__)
 def bucketlist_home():
     bucketlist = bucketlist_repository.select_all()
     countries = country_repository.select_all()
+    # import pdb; pdb.set_trace()
     return render_template("/bucketlist/index.html", countries= countries, bucketlist=bucketlist)
 
 @bucketlist_blueprint.route("/bucketlist/new/<country_id>", methods=["GET"])

@@ -14,18 +14,25 @@
     </form>
 {% endfor %}
 
-
-{% for bucket in bucketlist %}
-    <form class="city-form" action="/bucketlist/delete/{{bucketlist.id}}">
-    </form>
-    <button class="delete-button">Delete</button>
-      {{bucket}} {% if bucket.visited == True %}
+<table class="city-display-table">
+    <th>Your Bucket List Destinations</th>
+    {% for bucket in bucketlist %}
+    <tr>
+        <td><form class="city-form" action="/bucketlist/delete/{{bucketlist.id}}">
+        <button class="delete-button">Delete</button>
+            </form>
+   
+      {{bucket.country.name}} , {{bucket.city.name}} {% if bucket.visited == True %}
     &#9989
     {% else %}
     &#10060
     {% endif %}
-    <form class="city-form"action="/bucketlist/edit/{{bucketlist.id}}"></form>
-    <button class="city-button">Edit</button>
+        
+    <form class="submit-form"action="/bucketlist/edit/{{bucketlist.id}}"></form>
+    <button class="submit-button">Edit</button>
+       </td>
+    </tr>  
+</table> 
    
     
 {% endfor %}

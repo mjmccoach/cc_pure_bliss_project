@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<a class="home-button" href="/">Home</a>
+    <p>{{bucket.country.name}}</p>
+    <hr>
+
+    <p>{{bucket.city.name}}</p>
+    <p>Visited? {{bucket.visited}}</p>
+    <p><a class="city-button" href="/cities/{{city.id}}/edit">Edit</a></p>
+
+{% endblock %}

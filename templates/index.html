@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-
+<center>
+<img class="index-image"src="https://placebear.com/g/200/300" alt="Happy Bear  ">
+</center>
 <section>
-    <img src=url'(https://en.wikipedia.org/wiki/Red_panda#/media/File:RedPandaFullBody.JPG)' alt="xD">
+    <!-- <img src="https://en.wikipedia.org/wiki/Red_panda#/media/File:RedPandaFullBody.JPG" alt="xD"> -->
     Welcome to Pure Bliss, the quintessential travel bucketlist companion app!<br>
 
     We have pre-populated several countries and cities for you. <br>
@@ -14,7 +15,10 @@
 
 
 </section>
-
+<form action="/countries/new"></form>
+<a class="city-button" href="/countries/new"">Add Country</a>
+<form action="/cities/new"></form>
+<a class="city-button" href="/cities/new">Add City</a>
 
 
 
