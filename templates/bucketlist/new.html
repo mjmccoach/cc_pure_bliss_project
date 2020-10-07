@@ -6,17 +6,18 @@
 <a class="home-button" href="/">Home</a>
 <form class="city-form" action="/bucketlist" method="POST">
     <label for="city">City</label>
-        <select name="city" id="city">
+        <select name="city_id" id="city">
         {% for city in cities %}
-        {% if country.id == city.country.id  %} 
-        <option value="{{city.id}}">
-            {{city.name}}
-        </option>
-        {% endif %}
+            {% if city.country.id == country.id %}
+                <option value={{city.id}}>
+                    {{city.name}}
+                </option>
+            {% endif %}
         {% endfor %}
         </select>
-    
-    <button class="submit-button" type="submit">Add Destination</button>
+    <input type="hidden" name="country_id" value={{country.id}}>
+    <input type="hidden" name="visited" value="False">
+    <button class="submit-button" type="submit">Add</button>
 </form>
 
 

@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Countries</h1>
+
 <a class="home-button" href="/">Home</a>
 
-
 <table class=countries-table>
-<h2>Countries</h2>
 </tr>
 
     {% for country in all_countries %}
@@ -14,5 +13,6 @@
 
 </table>
 <a class="city-button" href="countries/new">Add new country</a>
+
 {% endblock %}
 

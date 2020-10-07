@@ -1,9 +1,10 @@
 body {
     font-family: 'Roboto Condensed', sans-serif;
     display:grid;
-    /* background-size: cover;
-    background-repeat: no-repeat; */
     background-color: #9ecef0;
+    background: url('/static/css/images/duffel.jpg');
+    background-size: cover;
+    align-content: center;
     color: whitesmoke;
     text-decoration: none;
 }
@@ -41,7 +42,7 @@ body > header {
 }
 
 body > h1 {
-    color:#1175bd;
+    color:whitesmoke;
 }
 body > header > ul > li {
     display: inline-block;
@@ -105,7 +106,6 @@ body > header > ul > li > a {
 .countries-table {
     display:flex;
     justify-content: center;
-
 }
 
 body > p {
@@ -155,7 +155,7 @@ body > p {
 }
 
 .city-link {
-    color: #345ac2;
+    color: white;
     text-decoration: none;
 }
 
@@ -170,7 +170,7 @@ body > p {
 
 
 .country-link {
-    color: #345ac2;
+    color: white;
     text-decoration: none;
 }
 
@@ -184,13 +184,25 @@ body > table > {
 }
 
 .submit-button {
+    display: flex;
+    cursor: pointer;
+    width:52px;
+    height: 24px;
+    padding: 10px;
+    margin: 16px;
+    border: 0;
     background-color:#124f7a;
     color: whitesmoke;
-    text-decoration: none;
-    cursor: pointer;   
+    justify-content: center;
+    vertical-align: middle;   
 }
 
 .submit-button:hover {
     background-color:#a3e6aa
+}
+
+.index-table-highlighting {
+    border: 3px solid black;
+    background-color: white;
 }
 

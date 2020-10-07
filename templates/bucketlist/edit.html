@@ -1,4 +1,20 @@
 {% extends 'base.html' %}
 {% block content  %}
     
+<a class="home-button" href="/">Home</a>
+<form class= "city-form" action="/bucketlist/{{bucketlist.id}}" method = "POST">
+    <label for="visited">Visited:</label>
+    <select name="visited" id="visited">
+        <option value="False"
+        {% if bucketlist.visited == False %} selected= "selected" {% endif %}>
+            No
+        </option>
+        <option value="True"
+            {% if bucketlist.visited == False %} selected="selected" {% endif %}>
+            Yes
+        </option>
+    </select>
+    <button class= "submit-button" type="submit">Update</button>
+</form>
+
 {% endblock %}

@@ -4,7 +4,7 @@
 
 <h1>My Bucket List</h1>
 <a class="home-button" href="/">Home</a>
-<a class= "city-form" href="bucketlist/new">Add Destination</a>
+<a class= "city-form" href="bucketlist/new"></a>Add Destination</a>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 <br>
 {% for country in countries %}
@@ -18,23 +18,23 @@
     <th>Your Bucket List Destinations</th>
     {% for bucket in bucketlist %}
     <tr>
-        <td><form class="city-form" action="/bucketlist/delete/{{bucketlist.id}}">
-        <button class="delete-button">Delete</button>
+        <td>
+            <form class="city-form" action="/bucketlist/{{bucket.id}}/delete" method="POST">
+                <button class="delete-button">Delete</button>
             </form>
-   
-      {{bucket.country.name}} , {{bucket.city.name}} {% if bucket.visited == True %}
-    &#9989
-    {% else %}
-    &#10060
-    {% endif %}
-        
-    <form class="submit-form"action="/bucketlist/edit/{{bucketlist.id}}"></form>
-    <button class="submit-button">Edit</button>
+                
+        {{bucket.country.name}} , <a class="city-link" href="/bucketlist/{{bucket.id}}">{{bucket.city.name}}</a> {% if bucket.visited or bucket.city.visited== True %}
+        &#9989
+        {% else %}
+        &#10060
+        {% endif %}
+         
        </td>
-    </tr>  
+    </tr>
+    {% endfor %}  
 </table> 
    
     
-{% endfor %}
+
 <hr>
 {% endblock %}

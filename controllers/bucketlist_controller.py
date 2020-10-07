@@ -15,40 +15,57 @@ bucketlist_blueprint = Blueprint("bucketlist",__name__)
 def bucketlist_home():
     bucketlist = bucketlist_repository.select_all()
     countries = country_repository.select_all()
-    # import pdb; pdb.set_trace()
+
     return render_template("/bucketlist/index.html", countries= countries, bucketlist=bucketlist)
 
 @bucketlist_blueprint.route("/bucketlist/new/<country_id>", methods=["GET"])
 def new_item(country_id):
     cities = city_repository.select_all()
 
-    countries = country_repository.select(country_id)
+    country = country_repository.select(country_id)
     
-    return render_template("/bucketlist/new.html", country = countries, cities = cities)
+    return render_template("/bucketlist/new.html", country = country, cities = cities)
 
 @bucketlist_blueprint.route("/bucketlist", methods=["POST"])
 def add_item():
-    city_id = request.form["city"]
-    # name = country_repository.select(country_id)
+    city_id = request.form["city_id"]
     visited = False
 
-    # make a city object using the id to find the right record in the db
     city = city_repository.select(city_id)
-    city_name = city_id.name
-    # get the country_id from the form
     
-    # make a country object using the id to find the right record in the db
-    country = city_name.country.name
+    
+    country_id = request.form["country_id"]
+    country = country_repository.select(country_id)
 
-
-    bucketlist = Bucketlist(city_name, country, visited)
+    visited = request.form["visited"]
+    bucketlist = Bucketlist(country, city, visited)
     bucketlist_repository.save(bucketlist)
     
-    # country = country_repository.select(country_id)
-    # city = city_repository.select_all()
-    # bucketlist = bucketlist_repository.select_all()
 
     return redirect("/bucketlist")
-    # country = country, city= cities, bucketlist = bucketlist)
-
     
+
+@bucketlist_blueprint.route("/bucketlist/<id>/delete", methods=["POST"])
+def delete_bucketlist(id):
+    bucketlist_repository.delete(id)
+    return redirect ("/bucketlist")
+
+@bucketlist_blueprint.route("/bucketlist/<id>", methods=["GET"])
+def view_bucketlist(id):
+    bucketlist = bucketlist_repository.select(id)
+    return render_template("/bucketlist/view.html", bucketlist = bucketlist)
+
+@bucketlist_blueprint.route("/bucketlist/<id>/edit", methods = ["GET"])
+def edit_bucketlist(id):
+    bucketlist = bucketlist_repository.select(id)
+    return render_template("bucketlist/edit.html", bucketlist = bucketlist)
+
+@bucketlist_blueprint.route("/bucketlist/<id>", methods =["POST"])
+def update_bucketlist(id):
+    visited = request.form["visited"]
+    bucketlist = bucketlist_repository.select(id)
+    bucketlist.visited = visited
+    
+    # bucketlist = Bucketlist(country, city, visited, id)
+    bucketlist_repository.update(bucketlist)
+    return redirect('/bucketlist')

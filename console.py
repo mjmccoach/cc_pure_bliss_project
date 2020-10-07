@@ -2,6 +2,7 @@ import pdb
 
 from models.city import City
 from models.country import Country
+from models.bucketlist import Bucketlist
 
 import repositories.country_repository as country_repository
 import repositories.city_repository as city_repository
@@ -37,5 +38,6 @@ city_repository.save(city3)
 
 # city_repository.delete(0)
 # city_repository.select_all()
-
+bucketlist1 = Bucketlist(country2, city1, False)
+bucketlist_repository.save(bucketlist1)
 pdb.set_trace()

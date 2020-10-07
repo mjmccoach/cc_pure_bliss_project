@@ -19,8 +19,8 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
    
-def update(item):
-    sql = "UPDATE bucketlist SET (city_id, country_id, visited) = VALUES (%s, %s, %s) WHERE id = %s"
+def update(bucketlist):
+    sql = "UPDATE bucketlist SET (city_id, country_id, visited) = (%s, %s, %s) WHERE id = %s"
     values = [bucketlist.city.id, bucketlist.country.id, bucketlist.visited, bucketlist.id]
     run_sql(sql, values)
 
@@ -37,4 +37,17 @@ def select_all():
 
         bucketlist_items.append(bucketlist)
     return bucketlist_items
+
+def select(id):
+    bucketlist = None
+
+    sql = "SELECT * FROM bucketlist WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        country = country_repository.select(result['country_id'])
+        city = city_repository.select(result['city_id'])
+        bucketlist = Bucketlist(country, city, result["visited"], result ["id"])
+    return bucketlist
 
