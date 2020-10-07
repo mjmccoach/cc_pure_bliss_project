@@ -33,14 +33,14 @@ def add_item():
 
     # make a city object using the id to find the right record in the db
     city = city_repository.select(city_id)
-    
+    city_name = city_id.name
     # get the country_id from the form
     
     # make a country object using the id to find the right record in the db
-    country = city.country
+    country = city_name.country.name
 
 
-    bucketlist = Bucketlist(city, country, visited)
+    bucketlist = Bucketlist(city_name, country, visited)
     bucketlist_repository.save(bucketlist)
     
     # country = country_repository.select(country_id)
