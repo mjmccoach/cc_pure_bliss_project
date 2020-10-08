@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<a class="home-button" href="/">Home</a>
+
 <form class="city-form" action="/countries/{{country.id}}" method ="POST">
     <label for="name">Name :</label>
     <input type="text" id ="name" name="name" value="{{country.name}}" required autofocus>
@@ -12,7 +12,7 @@
     </select>
     
    
-    <button type="submit">Update Country</button>
+    <button class="city-button" type="submit">Update</button>
 </form>
 
 

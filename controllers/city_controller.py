@@ -21,7 +21,7 @@ def new_city():
 @cities_blueprint.route("/cities", methods=["POST"])
 def add_city():
     name = request.form['name']
-    country = request.form["country"]
+    country_id = request.form["country"]
     visited = request.form["visited"]
 
     country = country_repository.select(country_id)
